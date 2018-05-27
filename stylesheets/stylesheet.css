@@ -250,13 +250,15 @@ code {
     width:100%;
 }
 pre {
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     background: rgba(0,0,0,0.6);
     text-shadow: none;
     overflow: auto;
     border: solid 1px #f2f2f2;
     border-radius:10px;
-    width:100%;
 }
 pre code {
     font-size:14px;
