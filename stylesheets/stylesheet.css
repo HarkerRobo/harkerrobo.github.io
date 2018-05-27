@@ -63,6 +63,12 @@ body {
 
 }
 
+#gitButtonText
+{
+    margin-left: 20%;
+}
+
+
 
 #or{
     display:block;
@@ -94,9 +100,7 @@ body {
 a {
     color: #2879d0;
 }
-a:hover {
-    color: #2268b2;
-}
+
 
 header {
     padding-top: 20px;
@@ -195,16 +199,25 @@ a.button {
     background-color:rgb(31, 49, 85);
     font-weight:500;
 }
-a.button:hover{
+
+/*a.button:hover{
     color:rgb(31, 49, 85);
+
     background-color: white;
-}
+}*/
+
 a.button small {
     display: block;
     font-size: 11px;
     border-color:white;
     border-width:1px;
 }
+
+
+
+
+
+
 header a.button {
     position: absolute;
     right: 0;
@@ -431,11 +444,21 @@ footer a:hover {
 /* #Media Queries
 ================================================== */
 
+@media only screen and (min-width: 960px) {
+    #autosizeImg
+    {
+        max-width: 120%;
+        max-height: 120%;
+        margin-left: -15%;
+        src: "images/github-logo-light.png";
+
+    }
+}
 /* Smaller than standard 960 (devices and browsers) */
 @media only screen and (max-width: 959px) {}
 
 /* Tablet Portrait size to standard 960 (devices and browsers) */
-@media only screen and (min-width: 768px) and (max-width: 959px) {
+/*@media only screen and (min-width: 768px) and (max-width: 959px) {
     .inner {
         width: 740px;
     }
@@ -462,10 +485,10 @@ footer a:hover {
         margin-left: 0;
     }
 
-}
+}*/
 
 /* All Mobile Sizes (devices and browser) */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 975px) {
     .inner {
         width: 93%;
     }
@@ -503,10 +526,10 @@ footer a:hover {
         border-width:2px;
         border-color:white;
     }
-    header a.button:hover{
+    /*header a.button:hover{
         background-color:white;
         color:rgb(31, 49, 85);
-    }
+    }*/
     header a.button small {
         font-size: 13px;
         display: inline;
@@ -539,7 +562,14 @@ footer a:hover {
 }
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-@media only screen and (min-width: 480px) and (max-width: 767px) {}
+@media only screen and (min-width: 480px) and (max-width: 767px)  
+{
+    #autosizeImg
+    {
+        src: "";
+
+    }
+}
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) {}
