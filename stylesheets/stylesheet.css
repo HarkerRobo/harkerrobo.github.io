@@ -296,7 +296,7 @@ form {
 
 #main-content h3 {
     font-family: 'Raleway';
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
     margin-top: 24px;
     margin-bottom: 8px;
@@ -304,8 +304,6 @@ form {
 }
 
 #main-content h3:before {
-    content: "///";
-    color: #9ddcff;
     padding-right: 0.3em;
     margin-left: -2em;
 }
