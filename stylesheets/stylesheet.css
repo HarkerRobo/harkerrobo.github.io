@@ -144,6 +144,7 @@ header h2 {
 }
 
 #content-wrapper {
+    margin:0;
     border-top: solid 1px #fff;
     width:100%;
     float:left;
@@ -265,10 +266,10 @@ pre code {
     padding: 0;
 }
 code::selection{
-    background-color:rgba(0,255,0,0.7)
+    background-color:rgba(0,0,0,1);
 }
 code::-moz-selection{
-    background-color:rgba(0,255,0,0.7)
+    background-color:rgba(0,0,0,1);
 }
 
 ul, ol, dl {
