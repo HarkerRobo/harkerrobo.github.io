@@ -68,7 +68,65 @@ body {
     margin-left: 20%;
 }
 
+.blinking-cursor {
+    font-family:monospace;
+    font-weight: 500;
+    font-size: 14px;
+    color: #00ff00;
+    -webkit-animation: 1s blink step-end infinite;
+    -moz-animation: 1s blink step-end infinite;
+    -ms-animation: 1s blink step-end infinite;
+    -o-animation: 1s blink step-end infinite;
+    animation: 1s blink step-end infinite;
+}
+.blinking-cursor::selection {
+    background-color:black;
+}
 
+@keyframes blink {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: #00ff00;
+    }
+}
+
+@-moz-keyframes blink {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: #00ff00;
+    }
+}
+
+@-webkit-keyframes blink {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: #00ff00;
+    }
+}
+
+@-ms-keyframes blink {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: #00ff00;
+    }
+}
+
+@-o-keyframes blink {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: #00ff00;
+    }
+}
 
 #or{
     display:block;

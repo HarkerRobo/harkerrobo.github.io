@@ -83,7 +83,17 @@
             }
 
         }
-
+        function getLogin() {
+            var date = new Date();
+            var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            var days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+            var hour = date.getHours();
+            if(hour < 10)
+            {
+                hour = "0" + hour;
+            }
+            return "Last login: " + days[date.getDay()] + " " + months[date.getMonth()] + " " + hour + ":" + date.getMinutes() + ":" + date.getMilliseconds();
+        }
     </script>
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -118,28 +128,43 @@
 
             <p>To view our robot code, type the following into the command line:</p>
 
-    <pre><code>$ cd #enter your desired directory
-$ git clone http://github.com/HarkerRobo/RoboCode2018
-$ cd RobotCode2018
-$ git fetch origin
-$ git checkout master
-</code></pre>
+    <pre><code><code id = "roboCode"></code><span class="blinking-cursor">_</span></code></pre>
+            <script>
+                document.getElementById("roboCode").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
+                    "$ git clone http://github.com/HarkerRobo/RoboCode2018\n" +
+                    "$ cd RobotCode2018\n" +
+                    "$ git fetch origin\n" +
+                    "$ git checkout master"
+                </script>
 <h3>2018 Scouting App</h3>
             <p>To view our scouting app, type the following into the command line:</p>
             <p>For Android:</p>
-            <pre><code>$ cd #enter your desired directory
+            <pre><code><code id = "android">$ cd #enter your desired directory
 $ git clone http://github.com/HarkerRobo/scouting-android
 $ cd scouting-android
 $ git fetch origin
-$ git checkout master</code></pre>
+$ git checkout master</code><span class="blinking-cursor">_</span></code></pre>
+            <script>
+                document.getElementById("android").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
+                    "$ git clone http://github.com/HarkerRobo/scouting-android\n" +
+                    "$ cd scouting-android\n" +
+                    "$ git fetch origin\n" +
+                    "$ git checkout master"
+                </script>
             <p>For iOS:</p>
-            <pre><code>$ cd #enter your desired directory
+            <pre><code><code id ="iOS">$ cd #enter your desired directory
 $ git clone http://github.com/HarkerRobo/scouting-ios
 $ cd scouting-ios
 $ git fetch origin
-$ git checkout master
+$ git checkout master</code><span class="blinking-cursor">_</span>
 </code></pre>
-
+<script>
+    document.getElementById("iOS").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
+        "$ git clone http://github.com/HarkerRobo/scouting-ios\n" +
+        "$ cd scouting-ios\n" +
+        "$ git fetch origin\n" +
+        "$ git checkout master"
+</script>
 
             <h3>
                 <a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors</h3>
