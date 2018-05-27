@@ -32,24 +32,58 @@
         var isChrome = !!window.chrome && !!window.chrome.webstore;
         function changeButton(x) 
         {
-            
-            if (x == 1)
+            if (window.innerWidth > 975)
             {
-                document.getElementById("autosizeImg").src = "images/github-logo-light.png";
-                document.getElementsByClassName("button")[0].style.backgroundColor = "transparent";
-                document.getElementsByClassName("button")[0].style.color = "rgb(255, 255, 255)";
+                if (x == 1)
+                {
+                    document.getElementById("autosizeImg").src = "images/github-logo-light.png";
+                    document.getElementsByClassName("button")[0].style.backgroundColor = "transparent";
+                    document.getElementsByClassName("button")[0].style.color = "rgb(255, 255, 255)";
+                }
+                else
+                {
+                    document.getElementById("autosizeImg").src = ("images/github-logo-dark.png");
+                    document.getElementsByClassName("button")[0].style.backgroundColor = "white";
+                    document.getElementsByClassName("button")[0].style.color = "rgb(31, 49, 85)";
+                }
             }
             else
             {
-                document.getElementById("autosizeImg").src = ("images/github-logo-dark.png");
-                document.getElementsByClassName("button")[0].style.backgroundColor = "white";
-                document.getElementsByClassName("button")[0].style.color = "rgb(31, 49, 85)";
+                if (x == 1)
+                {
+                    document.getElementsByClassName("button")[0].style.backgroundColor = "transparent";
+                    document.getElementsByClassName("button")[0].style.color = "rgb(255, 255, 255)";
+                }
+                else
+                {
+                    document.getElementsByClassName("button")[0].style.backgroundColor = "white";
+                    document.getElementsByClassName("button")[0].style.color = "rgb(31, 49, 85)";
+                }
             }
 
         }
         if(isChrome) {
             main();
         }
+        
+        function shouldResize()
+        {
+            if (window.innerWidth < 975)
+            {
+                document.getElementById("autosizeImg").src = "";
+                document.getElementById("gitButtonText").innerHTML = "Follow us on GitHub";
+                document.getElementById("gitButtonText").style.marginLeft = "0%";
+            }
+            else
+            {
+                document.getElementById("autosizeImg").src = "images/github-logo-light.png";
+                document.getElementById("gitButtonText").innerHTML = "Follow us on";
+                document.getElementById("gitButtonText").style.marginLeft = "20%";
+            }
+
+        }
+        shouldResize();
+        
     </script>
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -58,7 +92,7 @@
     <title>1072 Git Landing</title>
 </head>
 
-<body>
+<body onload="shouldResize()" onresize= "shouldResize()">
 <header>
     <div class="inner">
         <h1>Harker Robotics</h1>
