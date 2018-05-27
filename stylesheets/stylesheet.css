@@ -80,7 +80,7 @@ body {
     animation: 1s blink step-end infinite;
 }
 .blinking-cursor::selection {
-    background-color:black;
+    background-color:transparent;
 }
 
 @keyframes blink {
