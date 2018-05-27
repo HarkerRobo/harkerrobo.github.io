@@ -30,6 +30,23 @@
             });
         }
         var isChrome = !!window.chrome && !!window.chrome.webstore;
+        function changeButton(x) 
+        {
+            
+            if (x == 1)
+            {
+                document.getElementById("autosizeImg").src = "images/github-logo-light.png";
+                document.getElementsByClassName("button")[0].style.backgroundColor = "transparent";
+                document.getElementsByClassName("button")[0].style.color = "rgb(255, 255, 255)";
+            }
+            else
+            {
+                document.getElementById("autosizeImg").src = ("images/github-logo-dark.png");
+                document.getElementsByClassName("button")[0].style.backgroundColor = "white";
+                document.getElementsByClassName("button")[0].style.color = "rgb(31, 49, 85)";
+            }
+
+        }
         if(isChrome) {
             main();
         }
@@ -46,13 +63,14 @@
     <div class="inner">
         <h1>Harker Robotics</h1>
         <h2>Team 1072&#39;s Open Source Database</h2>
-        <a href="https://github.com/HarkerRobo" target="_blank" class="button"><small>Follow us on </small>GitHub</a>
+        <div style = "display: inline-block;"> <a href="https://github.com/HarkerRobo" target="_blank" class="button" onmouseenter="changeButton(0)" onmouseleave = "changeButton(1)"><small id = "gitButtonText">Follow us on </small> <img src = "images/github-logo-light.png" id = "autosizeImg"></a> </div>
     </div>
 </header>
 <div id="content-wrapper">
     <div class="inner clearfix">
         <section id="main-content">
             <welcome>Welcome to the landing page for Team 1072: Harker Robotics! </welcome>
+
             <h3>
                 <a name="welcome-to-harker-robotics" class="anchor" href="#welcome-to-harker-robotics"><span class="octicon octicon-link"></span></a>2018 Robot Code</h3>
 
@@ -103,7 +121,7 @@ $ git checkout master
 
             <div style = "display: inline-block; text-align:center">
             <p>Have any questions about our code? Contact <a href="mailto:harker1072@gmail.com">harker1072@gmail.com</a> and we’ll help you sort it out. 
-                <span id = "or">Or</span>
+                <span id = "or">or</span>
                 Visit <a target = "_blank" href = "https://robotics.harker.org">robotics.harker.org</a> to learn more about our team, view our blog, or view our array of photos. </p>
             </div>
         </section>
