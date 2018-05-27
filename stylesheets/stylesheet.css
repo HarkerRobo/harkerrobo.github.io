@@ -104,7 +104,6 @@ header {
     margin-bottom:5%;
     background: rgb(31, 49, 85);
     font-family: 'Raleway', sans-serif;
-    border-bottom: solid 1px #275da1;
     background-blend-mode: lighten;
     top:0;
     position:fixed;
