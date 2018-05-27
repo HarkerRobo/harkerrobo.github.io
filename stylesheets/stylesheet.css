@@ -68,6 +68,21 @@ body {
     font-family: neuropol;
     src: url('../fonts/neuropol.ttf');
 }
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway-Bold.ttf');
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway-Light.ttf');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway-Medium.ttf');
+    font-weight: 500;
+}
 a {
     color: #2879d0;
 }
@@ -162,7 +177,7 @@ aside#sidebar p.repo-owner a {
 a.button {
     box-sizing:border-box;
     width:218px;
-    height:79px;
+    height: 79px;
     line-height: 1.2;
     font-size: 30px;
     color: #fff;
@@ -172,8 +187,6 @@ a.button {
     border-style:solid;
     border-radius:5px;
     padding: 15px 60px 15px 60px;
-    margin-top:auto;
-    margin-bottom:auto;
     color:white;
     background-color:rgb(31, 49, 85);
 }
@@ -281,17 +294,10 @@ form {
 }
 
 #main-content h2 {
-    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: #474747;
 }
 #main-content h2:before {
-    content: "//";
-    color: #9ddcff;
-    padding-right: 0.3em;
-    margin-left: -1.5em;
 }
 
 #main-content h3 {
@@ -476,7 +482,7 @@ footer a:hover {
         -moz-border-radius: 5px;
         -webkit-border-radius: 5px;
         border-radius: 5px;
-        border-width:1px;
+        border-width:2px;
         border-color:white;
     }
     header a.button:hover{
