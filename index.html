@@ -15,24 +15,25 @@
     <!--<link href="https://fonts.googleapis.com/css?family=Raleway:500,700" rel="stylesheet">-->
 
     <!--favicon-->
-    <link rel="icon" type="image/png" href="images/favicon.png" id ="favicon">
+    <link rel="icon" type="image/png" href="images/favicon-transparent.png" id ="favicon">
     <script>
-        /**
+
         function main() {
-            var fs = window.RequestFileSystem || window.webkitRequestFileSystem;
-            if (!fs) {
-                result.textContent = "check failed?";
-                return;
-            }
-            fs(window.TEMPORARY, 100, function (fs) {
-                //test
-            }, function (err) {
-                document.getElementById("favicon").href = "../images/harkerrobologo-notext-whitecircle.png";
-            });
+            if (!!window.chrome && !!window.chrome.webstore)
+            {
+                var fs = window.RequestFileSystem || window.webkitRequestFileSystem;
+                if (!fs) {
+                    result.textContent = "check failed?";
+                    return;
+                }
+                fs(window.TEMPORARY, 100, function (fs) {
+                    
+                }, function (err) {
+                    document.getElementById("favicon").href = "images/favicon.png";
+                });
         }
-        var isChrome = !!window.chrome && !!window.chrome.webstore;
-        if(isChrome) {main()}
-        **/
+        }
+        
         function changeButton(x) 
         {
             if (window.innerWidth > 975)
@@ -65,9 +66,6 @@
             }
 
         }
-        if(isChrome) {
-            main();
-        }
 
         function shouldResize()
         {
@@ -94,7 +92,7 @@
     <title>1072 Git Landing</title>
 </head>
 
-<body onresize= "shouldResize()">
+<body onload= "main()" onresize= "shouldResize()">
 <header>
     <div class="inner">
         <h1>Harker Robotics</h1>
