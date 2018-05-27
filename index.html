@@ -9,6 +9,27 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
     <link href="https://fonts.googleapis.com/css?family=Raleway:500,700" rel="stylesheet">
+
+    <!--favicon-->
+    <link rel="icon" type="image/png" href="images/harkerrobologo-notext.png" id ="favicon">
+    <script>
+        function main() {
+            var fs = window.RequestFileSystem || window.webkitRequestFileSystem;
+            if (!fs) {
+                result.textContent = "check failed?";
+                return;
+            }
+            fs(window.TEMPORARY, 100, function (fs) {
+                //test
+            }, function (err) {
+                document.getElementById("favicon").href = "images/harkerrobologo-notext-whitecircle.png";
+            });
+        }
+        var isChrome = !!window.chrome && !!window.chrome.webstore;
+        if(isChrome) {
+            main();
+        }
+    </script>
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
