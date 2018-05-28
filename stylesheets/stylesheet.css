@@ -1,4 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -259,6 +259,8 @@ aside#sidebar p.repo-owner a {
     margin-bottom: 40px;
 }
 
+
+
 a.button {
     box-sizing:border-box;
     width:218px;
@@ -371,6 +373,29 @@ ul, ol, dl {
     margin-bottom: 20px;
 }
 
+#main-content button{
+  box-sizing: border-box;
+  height: 32px;
+  width: 179px;
+  color: rgb(255,255,255);
+  background-color: rgb(31,49,85);
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: rgb(31,49,85);
+  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
+  padding:0;
+}
+
+#main-content button:hover{
+  color: rgb(31,49,85);
+  background-color: transparent;
+  border-color: rgb(31,49,85);
+}
+
+#main-content button:active{
+  background-color: rgba(225,225,225,0.5);
+}
 
 /* COMMON STYLES */
 
@@ -658,7 +683,7 @@ footer a:hover {
 }
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-@media only screen and (min-width: 480px) and (max-width: 767px)  
+@media only screen and (min-width: 480px) and (max-width: 767px)
 {
     #autosizeImg
     {
