@@ -403,6 +403,13 @@ ul, ol, dl {
 #main-content button::-moz-selection {
   background-color: transparent;
 }
+
+.buttonText::selection {
+  background-color: transparent;
+}
+.buttonText::-moz-selection {
+  background-color: transparent;
+}
 /* COMMON STYLES */
 
 hr {
