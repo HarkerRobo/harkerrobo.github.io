@@ -29,13 +29,14 @@
                 fs(window.TEMPORARY, 100, function (fs) {
                     
                 }, function (err) {
-                    document.getElementById("favicon").href = "images/favicon.png";
+                    document.getElementById("favicon").href = "../images/favicon.png";
                 });
         }
         }
         
         function changeButton(x) 
         {
+            console.log(window.innerWidth);
             if (window.innerWidth > 975)
             {
                 if (x == 1)
@@ -81,6 +82,14 @@
                 document.getElementById("gitButtonText").innerHTML = "Follow us on";
                 document.getElementById("gitButtonText").style.marginLeft = "20%";
             }
+            if (window.innerWidth < 615)
+            {
+                changeTerminal(0);
+            }
+            else
+            {
+                changeTerminal(1);
+            }
 
         }
         function getLogin() {
@@ -88,11 +97,55 @@
             var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
             var days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
             var hour = date.getHours();
+            var seconds = date.getSeconds();
             if(hour < 10)
             {
                 hour = "0" + hour;
             }
-            return "Last login: " + days[date.getDay()] + " " + months[date.getMonth()] + " " + hour + ":" + date.getMinutes() + ":" + date.getSeconds();
+            if(seconds < 10)
+            {
+                seconds = "0" + seconds;
+            }
+            return "Last login: " + days[date.getDay()] + " " + months[date.getMonth()] + " " + hour + ":" + date.getMinutes() + ":" + seconds;
+        }
+
+        function changeTerminal(x) {
+            if(x == 0)
+            {
+                document.getElementById("roboCode").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
+                    "$ git clone http://github.com/\n\tHarkerRobo/RoboCode2018\n" +
+                    "$ cd RoboCode2018\n" +
+                    "$ git fetch origin\n" +
+                    "$ git checkout master";
+                document.getElementById("android").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
+                    "$ git clone http://github.com/\n\tHarkerRobo/scouting-android\n" +
+                    "$ cd scouting-android\n" +
+                    "$ git fetch origin\n" +
+                    "$ git checkout master";
+                document.getElementById("iOS").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
+                    "$ git clone http://github.com/\n\tHarkerRobo/scouting-ios\n" +
+                    "$ cd scouting-ios\n" +
+                    "$ git fetch origin\n" +
+                    "$ git checkout master"
+            }
+            else if (x == 1)
+            {
+                document.getElementById("roboCode").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
+                    "$ git clone http://github.com/HarkerRobo/RoboCode2018\n" +
+                    "$ cd RoboCode2018\n" +
+                    "$ git fetch origin\n" +
+                    "$ git checkout master";
+                document.getElementById("android").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
+                    "$ git clone http://github.com/HarkerRobo/scouting-android\n" +
+                    "$ cd scouting-android\n" +
+                    "$ git fetch origin\n" +
+                    "$ git checkout master";
+                document.getElementById("iOS").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
+                    "$ git clone http://github.com/HarkerRobo/scouting-ios\n" +
+                    "$ cd scouting-ios\n" +
+                    "$ git fetch origin\n" +
+                    "$ git checkout master"
+            }
         }
     </script>
     <!--[if lt IE 9]>
@@ -139,11 +192,7 @@
 <h3>2018 Scouting App</h3>
             <p>To view our scouting app, type the following into the command line:</p>
             <p>For Android:</p>
-            <pre><code><code id = "android">$ cd #enter your desired directory
-$ git clone http://github.com/HarkerRobo/scouting-android
-$ cd scouting-android
-$ git fetch origin
-$ git checkout master</code><span class="blinking-cursor">_</span></code></pre>
+            <pre><code><code id = "android"></code><span class="blinking-cursor">_</span></code></pre>
             <script>
                 document.getElementById("android").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
                     "$ git clone http://github.com/HarkerRobo/scouting-android\n" +
@@ -152,11 +201,7 @@ $ git checkout master</code><span class="blinking-cursor">_</span></code></pre>
                     "$ git checkout master"
                 </script>
             <p>For iOS:</p>
-            <pre><code><code id ="iOS">$ cd #enter your desired directory
-$ git clone http://github.com/HarkerRobo/scouting-ios
-$ cd scouting-ios
-$ git fetch origin
-$ git checkout master</code><span class="blinking-cursor">_</span>
+            <pre><code><code id ="iOS"></code><span class="blinking-cursor">_</span>
 </code></pre>
 <script>
     document.getElementById("iOS").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
@@ -165,6 +210,10 @@ $ git checkout master</code><span class="blinking-cursor">_</span>
         "$ git fetch origin\n" +
         "$ git checkout master"
 </script>
+            <script>
+                if(window.innerWidth<615)
+                    changeTerminal(0)
+            </script>
 
             <h3>
                 <a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors</h3>

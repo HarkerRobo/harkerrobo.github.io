@@ -52,11 +52,11 @@ table {
 body {
     font-size: 15px;
     line-height: 1.5;
-    background-image:url(../images/logo.png);
+    background-image:url(../images/logo-notext.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size:700px;
-    background-position:center 100px;
+    background-size:560px;
+    background-position:center 156px;
     font-family: 'Tajawal', sans-serif;
     font-weight: 400;
     color: #666;
@@ -140,6 +140,16 @@ body {
     src: url('../fonts/neuropol.ttf');
 }
 @font-face {
+    font-family: 'Futura';
+    src: url('../fonts/Futura-Medium-01.ttf');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Futura Book';
+    src: url('../fonts/Futura-Book.ttf');
+    font-weight: 500;
+}
+@font-face {
     font-family: 'Raleway';
     src: url('../fonts/Raleway-Bold.ttf');
     font-weight: 700;
@@ -183,6 +193,9 @@ header h1 {
     white-space: nowrap;
     font-family: 'Raleway', sans-serif;
     font-weight:700;
+}
+#harker{
+    font-weight: lighter;
 }
 
 header h2 {
@@ -307,6 +320,11 @@ code {
     z-index:1;
     width:100%;
 }
+
+a:hover{
+    color: rgb(31,49,85);
+}
+
 pre {
     padding-left: 20px;
     padding-right: 20px;
@@ -326,7 +344,7 @@ pre code {
     padding: 0;
 }
 code::selection{
-    background-color:rgba(0,0,0,1);
+    background-color:rgba(0,0,255,1);
 }
 code::-moz-selection{
     background-color:rgba(0,0,0,1);
