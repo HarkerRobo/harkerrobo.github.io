@@ -147,6 +147,31 @@
                         "$ git checkout master";
                 }
             }
+            function copyToClipboard(x)
+            {
+                var str = "";
+                if (x == 0)
+                {
+                    str = document.getElementById("roboCodeCopy").textContent;
+                }
+                if (x == 1)
+                {
+                    str = document.getElementById("scoutingiOSCopy").textContent;
+                }
+                if (x == 2)
+                {
+                    str = document.getElementById("scoutingAndroidCopy").textContent;
+                }
+                while (str.indexOf("$ ") >= 0 )
+                {
+                    str = str.replace("$ ", "");    
+                }
+                document.getElementById("roboInput").innerHTML = str;
+                var copyText = document.getElementById("roboInput");
+                copyText.select();
+                document.execCommand("copy");
+            }
+
         </script>
         <!--[if lt IE 9]>
         <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -183,32 +208,37 @@
 
         <pre><code><code id = "roboCode"></code><span class="blinking-cursor">_</span></code></pre>
                 <script>
-                    document.getElementById("roboCode").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
+                    document.getElementById("roboCode").innerHTML = getLogin() + "\n\n" + "<x id = \"roboCodeCopy\">$ cd #enter your desired directory\n" +
                         "$ git clone http://github.com/HarkerRobo/RoboCode2018\n" +
                         "$ cd RoboCode2018\n" +
                         "$ git fetch origin\n" +
-                        "$ git checkout master";
+                        "$ git checkout master</x>";
                     </script>
+        <button onclick="copyToClipboard(0)"> Copy to Clipboard </button>
+        
+        
     <h3>2018 Scouting App</h3>
                 <p>To view our scouting app, type the following into the command line:</p>
                 <p>For Android:</p>
                 <pre><code><code id = "android"></code><span class="blinking-cursor">_</span></code></pre>
                 <script>
-                    document.getElementById("android").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
+                    document.getElementById("android").innerHTML = getLogin() + "\n\n" + "<x id =\"scoutingiOSCopy\">$ cd #enter your desired directory\n" +
                         "$ git clone http://github.com/HarkerRobo/scouting-android\n" +
                         "$ cd scouting-android\n" +
                         "$ git fetch origin\n" +
-                        "$ git checkout master";
+                        "$ git checkout master</x>";
                     </script>
+                    <button onclick="copyToClipboard(1)"> Copy to Clipboard </button> 
                 <p>For iOS:</p>
                 <pre><code><code id ="iOS"></code><span class="blinking-cursor">_</span></code></pre>
     <script>
-        document.getElementById("iOS").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
+        document.getElementById("iOS").innerHTML = getLogin() + "\n\n" + "<x id =\"scoutingAndroidCopy\">$ cd #enter your desired directory\n" +
             "$ git clone http://github.com/HarkerRobo/scouting-ios\n" +
             "$ cd scouting-ios\n" +
             "$ git fetch origin\n" +
-            "$ git checkout master";
+            "$ git checkout master</x>";
     </script>
+    <button onclick="copyToClipboard(2)"> Copy to Clipboard </button>
                 <script>
                     if(window.innerWidth<615)
                         changeTerminal(0)
@@ -250,5 +280,6 @@
             -->
         </div>
     </div>
+    <textarea id="roboInput" rows ="5" cols="4000">  </textarea>
     </body>
     </html>
