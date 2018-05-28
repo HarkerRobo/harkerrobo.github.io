@@ -140,16 +140,6 @@ body {
     src: url('../fonts/neuropol.ttf');
 }
 @font-face {
-    font-family: 'Futura';
-    src: url('../fonts/Futura-Medium-01.ttf');
-    font-weight: 500;
-}
-@font-face {
-    font-family: 'Futura Book';
-    src: url('../fonts/Futura-Book.ttf');
-    font-weight: 500;
-}
-@font-face {
     font-family: 'Raleway';
     src: url('../fonts/Raleway-Bold.ttf');
     font-weight: 700;
@@ -182,6 +172,14 @@ header {
     width:100%;
 }
 
+header h1::selection {
+    background-color: transparent;
+}
+header h1::-moz-selection {
+    background-color: transparent;
+}
+
+
 header h1 {
     letter-spacing: -1px;
     font-size: 55px;
@@ -206,6 +204,12 @@ header h2 {
     letter-spacing: 0;
     font-weight:500;
     font-family: 'Raleway', sans-serif;
+}
+header h2::selection {
+    background-color: transparent;
+}
+header h2::-moz-selection {
+    background-color: transparent;
 }
 
 .inner {
@@ -285,10 +289,23 @@ a.button small {
     border-width:1px;
 }
 
+a.button small::selection {
+    background-color:transparent;
 
+}
+a.button small::-moz-selection {
+    background-color:transparent;
 
+}
 
+a.button img::selection {
+    background-color:transparent;
 
+}
+a.button img::-moz-selection {
+    background-color:transparent;
+
+}
 
 header a.button {
     position: absolute;
