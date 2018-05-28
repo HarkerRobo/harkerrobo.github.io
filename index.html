@@ -1,255 +1,254 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 
-<html>
-<head>
-    <link rel="icon" 
-      type="image/png" 
-      href="../images/harkerrobologo-notext.png" />
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-    <!--<link href="https://fonts.googleapis.com/css?family=Raleway:500,700" rel="stylesheet">-->
+    <html>
+    <head>
+        <link rel="icon" 
+          type="image/png" 
+          href="../images/harkerrobologo-notext.png" />
+        <meta charset='utf-8'>
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+        <!--<link href="https://fonts.googleapis.com/css?family=Raleway:500,700" rel="stylesheet">-->
 
-    <!--favicon-->
-    <link rel="icon" type="image/png" href="images/favicon-transparent.png" id ="favicon">
-    <script>
+        <!--favicon-->
+        <link rel="icon" type="image/png" href="images/favicon-transparent.png" id ="favicon">
+        <script>
 
-        function main() {
-            if (!!window.chrome && !!window.chrome.webstore)
+            function main() {
+                if (!!window.chrome && !!window.chrome.webstore)
+                {
+                    var fs = window.RequestFileSystem || window.webkitRequestFileSystem;
+                    if (!fs) {
+                        result.textContent = "check failed?";
+                        return;
+                    }
+                    fs(window.TEMPORARY, 100, function (fs) {
+
+                    }, function (err) {
+                        document.getElementById("favicon").href = "../images/favicon.png";
+                    });
+            }
+            }
+
+            function changeButton(x) 
             {
-                var fs = window.RequestFileSystem || window.webkitRequestFileSystem;
-                if (!fs) {
-                    result.textContent = "check failed?";
-                    return;
+                console.log(window.innerWidth);
+                if (window.innerWidth > 975)
+                {
+                    if (x == 1)
+                    {
+                        document.getElementById("autosizeImg").src = "images/github-logo-light.png";
+                        document.getElementsByClassName("button")[0].style.backgroundColor = "transparent";
+                        document.getElementsByClassName("button")[0].style.color = "rgb(255, 255, 255)";
+                    }
+                    else
+                    {
+                        document.getElementById("autosizeImg").src = ("images/github-logo-dark.png");
+                        document.getElementsByClassName("button")[0].style.backgroundColor = "white";
+                        document.getElementsByClassName("button")[0].style.color = "rgb(31, 49, 85)";
+                    }
                 }
-                fs(window.TEMPORARY, 100, function (fs) {
-                    
-                }, function (err) {
-                    document.getElementById("favicon").href = "../images/favicon.png";
-                });
-        }
-        }
-        
-        function changeButton(x) 
-        {
-            console.log(window.innerWidth);
-            if (window.innerWidth > 975)
+                else
+                {
+                    if (x == 1)
+                    {
+                        document.getElementsByClassName("button")[0].style.backgroundColor = "transparent";
+                        document.getElementsByClassName("button")[0].style.color = "rgb(255, 255, 255)";
+                    }
+                    else
+                    {
+                        document.getElementsByClassName("button")[0].style.backgroundColor = "white";
+                        document.getElementsByClassName("button")[0].style.color = "rgb(31, 49, 85)";
+                    }
+                }
+
+            }
+
+            function shouldResize()
             {
-                if (x == 1)
+                if (window.innerWidth < 975)
+                {
+                    document.getElementById("autosizeImg").src = "";
+                    document.getElementById("gitButtonText").innerHTML = "Follow us on GitHub";
+                    document.getElementById("gitButtonText").style.marginLeft = "0%";
+                }
+                else
                 {
                     document.getElementById("autosizeImg").src = "images/github-logo-light.png";
-                    document.getElementsByClassName("button")[0].style.backgroundColor = "transparent";
-                    document.getElementsByClassName("button")[0].style.color = "rgb(255, 255, 255)";
+                    document.getElementById("gitButtonText").innerHTML = "Follow us on";
+                    document.getElementById("gitButtonText").style.marginLeft = "20%";
+                }
+                if (window.innerWidth < 615)
+                {
+                    changeTerminal(0);
                 }
                 else
                 {
-                    document.getElementById("autosizeImg").src = ("images/github-logo-dark.png");
-                    document.getElementsByClassName("button")[0].style.backgroundColor = "white";
-                    document.getElementsByClassName("button")[0].style.color = "rgb(31, 49, 85)";
+                    changeTerminal(1);
                 }
+
             }
-            else
-            {
-                if (x == 1)
+            function getLogin() {
+                var date = new Date();
+                var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                var days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+                var hour = date.getHours();
+                var seconds = date.getSeconds();
+                if(hour < 10)
                 {
-                    document.getElementsByClassName("button")[0].style.backgroundColor = "transparent";
-                    document.getElementsByClassName("button")[0].style.color = "rgb(255, 255, 255)";
+                    hour = "0" + hour;
                 }
-                else
+                if(seconds < 10)
                 {
-                    document.getElementsByClassName("button")[0].style.backgroundColor = "white";
-                    document.getElementsByClassName("button")[0].style.color = "rgb(31, 49, 85)";
+                    seconds = "0" + seconds;
                 }
+                return "Last login: " + days[date.getDay()] + " " + months[date.getMonth()] + " " + hour + ":" + date.getMinutes() + ":" + seconds;
             }
 
-        }
+            function changeTerminal(x) {
+                if(x == 0)
+                {
+                    document.getElementById("roboCode").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
+                        "$ git clone http://github.com/\n\tHarkerRobo/RoboCode2018\n" +
+                        "$ cd RoboCode2018\n" +
+                        "$ git fetch origin\n" +
+                        "$ git checkout master";
+                    document.getElementById("android").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
+                        "$ git clone http://github.com/\n\tHarkerRobo/scouting-android\n" +
+                        "$ cd scouting-android\n" +
+                        "$ git fetch origin\n" +
+                        "$ git checkout master";
+                    document.getElementById("iOS").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
+                        "$ git clone http://github.com/\n\tHarkerRobo/scouting-ios\n" +
+                        "$ cd scouting-ios\n" +
+                        "$ git fetch origin\n" +
+                        "$ git checkout master";
+                }
+                else if (x == 1)
+                {
+                    document.getElementById("roboCode").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
+                        "$ git clone http://github.com/HarkerRobo/RoboCode2018\n" +
+                        "$ cd RoboCode2018\n" +
+                        "$ git fetch origin\n" +
+                        "$ git checkout master";
+                    document.getElementById("android").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
+                        "$ git clone http://github.com/HarkerRobo/scouting-android\n" +
+                        "$ cd scouting-android\n" +
+                        "$ git fetch origin\n" +
+                        "$ git checkout master";
+                    document.getElementById("iOS").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
+                        "$ git clone http://github.com/HarkerRobo/scouting-ios\n" +
+                        "$ cd scouting-ios\n" +
+                        "$ git fetch origin\n" +
+                        "$ git checkout master";
+                }
+            }
+        </script>
+        <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
 
-        function shouldResize()
+        <title>1072 Git Landing</title>
+    </head>
+
+    <body onload= "main()" onresize= "shouldResize()">
+    <header>
+        <div class="inner">
+            <h1>Harker Robotics</h1>
+            <h2>Team 1072&#39;s Open Source Database</h2>
+            <div style = "display: inline-block;"> <a href="https://github.com/HarkerRobo" target="_blank" class="button" onload = "shouldResize()" onmouseenter="changeButton(0)" onmouseleave = "changeButton(1)"><small id = "gitButtonText">Follow us on </small> <img src = "images/github-logo-light.png" id = "autosizeImg"></a> </div>
+        </div>
+    </header>
+    <script>
+        if (window.innerWidth < 975)
         {
-            if (window.innerWidth < 975)
-            {
-                document.getElementById("autosizeImg").src = "";
-                document.getElementById("gitButtonText").innerHTML = "Follow us on GitHub";
-                document.getElementById("gitButtonText").style.marginLeft = "0%";
-            }
-            else
-            {
-                document.getElementById("autosizeImg").src = "images/github-logo-light.png";
-                document.getElementById("gitButtonText").innerHTML = "Follow us on";
-                document.getElementById("gitButtonText").style.marginLeft = "20%";
-            }
-            if (window.innerWidth < 615)
-            {
-                changeTerminal(0);
-            }
-            else
-            {
-                changeTerminal(1);
-            }
-
-        }
-        function getLogin() {
-            var date = new Date();
-            var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-            var days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
-            var hour = date.getHours();
-            var seconds = date.getSeconds();
-            if(hour < 10)
-            {
-                hour = "0" + hour;
-            }
-            if(seconds < 10)
-            {
-                seconds = "0" + seconds;
-            }
-            return "Last login: " + days[date.getDay()] + " " + months[date.getMonth()] + " " + hour + ":" + date.getMinutes() + ":" + seconds;
-        }
-
-        function changeTerminal(x) {
-            if(x == 0)
-            {
-                document.getElementById("roboCode").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
-                    "$ git clone http://github.com/\n\tHarkerRobo/RoboCode2018\n" +
-                    "$ cd RoboCode2018\n" +
-                    "$ git fetch origin\n" +
-                    "$ git checkout master";
-                document.getElementById("android").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
-                    "$ git clone http://github.com/\n\tHarkerRobo/scouting-android\n" +
-                    "$ cd scouting-android\n" +
-                    "$ git fetch origin\n" +
-                    "$ git checkout master";
-                document.getElementById("iOS").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
-                    "$ git clone http://github.com/\n\tHarkerRobo/scouting-ios\n" +
-                    "$ cd scouting-ios\n" +
-                    "$ git fetch origin\n" +
-                    "$ git checkout master"
-            }
-            else if (x == 1)
-            {
-                document.getElementById("roboCode").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
-                    "$ git clone http://github.com/HarkerRobo/RoboCode2018\n" +
-                    "$ cd RoboCode2018\n" +
-                    "$ git fetch origin\n" +
-                    "$ git checkout master";
-                document.getElementById("android").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
-                    "$ git clone http://github.com/HarkerRobo/scouting-android\n" +
-                    "$ cd scouting-android\n" +
-                    "$ git fetch origin\n" +
-                    "$ git checkout master";
-                document.getElementById("iOS").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
-                    "$ git clone http://github.com/HarkerRobo/scouting-ios\n" +
-                    "$ cd scouting-ios\n" +
-                    "$ git fetch origin\n" +
-                    "$ git checkout master"
-            }
+            document.getElementById("autosizeImg").src = "";
+            document.getElementById("gitButtonText").innerHTML = "Follow us on GitHub";
+            document.getElementById("gitButtonText").style.marginLeft = "0%";
         }
     </script>
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    
-    <title>1072 Git Landing</title>
-</head>
+    <div id="content-wrapper">
+        <div class="inner clearfix">
+            <section id="main-content">
+                <welcome>Welcome to the landing page for Team 1072: Harker Robotics! </welcome>
 
-<body onload= "main()" onresize= "shouldResize()">
-<header>
-    <div class="inner">
-        <h1>Harker Robotics</h1>
-        <h2>Team 1072&#39;s Open Source Database</h2>
-        <div style = "display: inline-block;"> <a href="https://github.com/HarkerRobo" target="_blank" class="button" onload = "shouldResize()" onmouseenter="changeButton(0)" onmouseleave = "changeButton(1)"><small id = "gitButtonText">Follow us on </small> <img src = "images/github-logo-light.png" id = "autosizeImg"></a> </div>
-    </div>
-</header>
-<script>
-    if (window.innerWidth < 975)
-    {
-        document.getElementById("autosizeImg").src = "";
-        document.getElementById("gitButtonText").innerHTML = "Follow us on GitHub";
-        document.getElementById("gitButtonText").style.marginLeft = "0%";
-    }
-</script>
-<div id="content-wrapper">
-    <div class="inner clearfix">
-        <section id="main-content">
-            <welcome>Welcome to the landing page for Team 1072: Harker Robotics! </welcome>
+                <h3>
+                    <a name="welcome-to-harker-robotics" class="anchor" href="#welcome-to-harker-robotics"><span class="octicon octicon-link"></span></a>2018 Robot Code</h3>
 
-            <h3>
-                <a name="welcome-to-harker-robotics" class="anchor" href="#welcome-to-harker-robotics"><span class="octicon octicon-link"></span></a>2018 Robot Code</h3>
+                <p>To view our robot code, type the following into the command line:</p>
 
-            <p>To view our robot code, type the following into the command line:</p>
-
-    <pre><code><code id = "roboCode"></code><span class="blinking-cursor">_</span></code></pre>
-            <script>
-                document.getElementById("roboCode").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
-                    "$ git clone http://github.com/HarkerRobo/RoboCode2018\n" +
-                    "$ cd RoboCode2018\n" +
-                    "$ git fetch origin\n" +
-                    "$ git checkout master"
+        <pre><code><code id = "roboCode"></code><span class="blinking-cursor">_</span></code></pre>
+                <script>
+                    document.getElementById("roboCode").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
+                        "$ git clone http://github.com/HarkerRobo/RoboCode2018\n" +
+                        "$ cd RoboCode2018\n" +
+                        "$ git fetch origin\n" +
+                        "$ git checkout master";
+                    </script>
+    <h3>2018 Scouting App</h3>
+                <p>To view our scouting app, type the following into the command line:</p>
+                <p>For Android:</p>
+                <pre><code><code id = "android"></code><span class="blinking-cursor">_</span></code></pre>
+                <script>
+                    document.getElementById("android").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
+                        "$ git clone http://github.com/HarkerRobo/scouting-android\n" +
+                        "$ cd scouting-android\n" +
+                        "$ git fetch origin\n" +
+                        "$ git checkout master";
+                    </script>
+                <p>For iOS:</p>
+                <pre><code><code id ="iOS"></code><span class="blinking-cursor">_</span></code></pre>
+    <script>
+        document.getElementById("iOS").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
+            "$ git clone http://github.com/HarkerRobo/scouting-ios\n" +
+            "$ cd scouting-ios\n" +
+            "$ git fetch origin\n" +
+            "$ git checkout master";
+    </script>
+                <script>
+                    if(window.innerWidth<615)
+                        changeTerminal(0)
                 </script>
-<h3>2018 Scouting App</h3>
-            <p>To view our scouting app, type the following into the command line:</p>
-            <p>For Android:</p>
-            <pre><code><code id = "android"></code><span class="blinking-cursor">_</span></code></pre>
-            <script>
-                document.getElementById("android").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
-                    "$ git clone http://github.com/HarkerRobo/scouting-android\n" +
-                    "$ cd scouting-android\n" +
-                    "$ git fetch origin\n" +
-                    "$ git checkout master"
-                </script>
-            <p>For iOS:</p>
-            <pre><code><code id ="iOS"></code><span class="blinking-cursor">_</span>
-</code></pre>
-<script>
-    document.getElementById("iOS").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
-        "$ git clone http://github.com/HarkerRobo/scouting-ios\n" +
-        "$ cd scouting-ios\n" +
-        "$ git fetch origin\n" +
-        "$ git checkout master"
-</script>
-            <script>
-                if(window.innerWidth<615)
-                    changeTerminal(0)
-            </script>
 
-            <h3>
-                <a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors</h3>
+                <h3>
+                    <a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors</h3>
 
-            <p>The primary contributors to our open source efforts include</p>
+                <p>The primary contributors to our open source efforts include</p>
 
-            <ul>
-                <li> Joel Manning (<a href="https://github.com/bokken12" target="_blank" class="user-mention">@bokken12</a>)</li>
-                <li> Finn Frankis (<a href="https://github.com/FinnitoProductions" target="_blank" class="user-mention">@FinnitoProductions</a>)</li>
-                <li> Sanjay Rajasekharan (<a href="https://github.com/sanjayrajasekharan" target="_blank" class="user-mention">@sanjayrajasekharan</a>)</li>
-                <li> Jatin Kohli (<a href="https://github.com/20JatinK" target="_blank" class="user-mention">@20JatinK</a>)</li>
-              
-                <li> Ryan Adolf (<a href="https://github.com/rianadon" target="_blank" class="user-mention">@rianadon</a>)</li>
-                <li> Akshay Manglik (<a href="https://github.com/AkshayM21" target="_blank" class="user-mention">@AkshayM21</a>)</li>
-                <li> Aydin Tiritoglu (<a href="https://github.com/atirit" target="_blank" class="user-mention">@atirit</a>)</li>
+                <ul>
+                    <li> Joel Manning (<a href="https://github.com/bokken12" target="_blank" class="user-mention">@bokken12</a>)</li>
+                    <li> Finn Frankis (<a href="https://github.com/FinnitoProductions" target="_blank" class="user-mention">@FinnitoProductions</a>)</li>
+                    <li> Sanjay Rajasekharan (<a href="https://github.com/sanjayrajasekharan" target="_blank" class="user-mention">@sanjayrajasekharan</a>)</li>
+                    <li> Jatin Kohli (<a href="https://github.com/20JatinK" target="_blank" class="user-mention">@20JatinK</a>)</li>
+
+                    <li> Ryan Adolf (<a href="https://github.com/rianadon" target="_blank" class="user-mention">@rianadon</a>)</li>
+                    <li> Akshay Manglik (<a href="https://github.com/AkshayM21" target="_blank" class="user-mention">@AkshayM21</a>)</li>
+                    <li> Aydin Tiritoglu (<a href="https://github.com/atirit" target="_blank" class="user-mention">@atirit</a>)</li>
 
 
-            </ul><h3>
-            <a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Contact Us</h3>
+                </ul><h3>
+                <a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Contact Us</h3>
 
 
-            <div style = "display: inline-block; text-align:center">
-            <p>Have any questions about our code? Contact <a href="mailto:harker1072@gmail.com">harker1072@gmail.com</a> and we’ll help you sort it out. 
-                <span id = "or">or</span>
-                Visit <a target = "_blank" href = "https://robotics.harker.org">robotics.harker.org</a> to learn more about our team, view our blog, or view our array of photos. </p>
-            </div>
-        </section>
+                <div style = "display: inline-block; text-align:center">
+                <p>Have any questions about our code? Contact <a href="mailto:harker1072@gmail.com">harker1072@gmail.com</a> and we’ll help you sort it out. 
+                    <span id = "or">or</span>
+                    Visit <a target = "_blank" href = "https://robotics.harker.org">robotics.harker.org</a> to learn more about our team, view our blog, or view our array of photos. </p>
+                </div>
+            </section>
 
-        <!--
-                <aside id="sidebar">
-                  <p>A few of our popular repositories include:</p>
-                  <li>The Harker Robot Template (<a href="https://github.com/harkerrobo/robottemplate"></a>)</li>
-                  <li>2014 "Projektyle" Code (<a href="https://github.com/harkerrobo/robotcode2014"></a>)</li>
-                </aside>
-        -->
+            <!--
+                    <aside id="sidebar">
+                      <p>A few of our popular repositories include:</p>
+                      <li>The Harker Robot Template (<a href="https://github.com/harkerrobo/robottemplate"></a>)</li>
+                      <li>2014 "Projektyle" Code (<a href="https://github.com/harkerrobo/robotcode2014"></a>)</li>
+                    </aside>
+            -->
+        </div>
     </div>
-</div>
-</body>
-</html>
+    </body>
+    </html>
