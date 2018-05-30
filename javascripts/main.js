@@ -97,12 +97,12 @@ function changeTerminal(x) {
             "$ cd RoboCode2018\n" +
             "$ git fetch origin\n" +
             "$ git checkout master";
-        document.getElementById("scoutingiOSCopy").innerHTML = "$ cd #enter your desired directory\n" +
+        document.getElementById("scoutingAnroidCopy").innerHTML = "$ cd #enter your desired directory\n" +
             "$ git clone http://github.com/\n\tHarkerRobo/scouting-android\n" +
             "$ cd scouting-android\n" +
             "$ git fetch origin\n" +
             "$ git checkout master";
-        document.getElementById("scoutingAndroidCopy").innerHTML = "$ cd #enter your desired directory\n" +
+        document.getElementById("scoutingiOSCopy").innerHTML = "$ cd #enter your desired directory\n" +
             "$ git clone http://github.com/\n\tHarkerRobo/scouting-ios\n" +
             "$ cd scouting-ios\n" +
             "$ git fetch origin\n" +
@@ -115,12 +115,12 @@ function changeTerminal(x) {
             "$ cd RoboCode2018\n" +
             "$ git fetch origin\n" +
             "$ git checkout master";
-        document.getElementById("scoutingiOSCopy").innerHTML = "$ cd #enter your desired directory\n" +
+        document.getElementById("scoutingAndroidCopy").innerHTML = "$ cd #enter your desired directory\n" +
             "$ git clone http://github.com/HarkerRobo/scouting-android\n" +
             "$ cd scouting-android\n" +
             "$ git fetch origin\n" +
             "$ git checkout master";
-        document.getElementById("scoutingAndroidCopy").innerHTML = "$ cd #enter your desired directory\n" +
+        document.getElementById("scoutingiOSCopy").innerHTML = "$ cd #enter your desired directory\n" +
             "$ git clone http://github.com/HarkerRobo/scouting-ios\n" +
             "$ cd scouting-ios\n" +
             "$ git fetch origin\n" +
