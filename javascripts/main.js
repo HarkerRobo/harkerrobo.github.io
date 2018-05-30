@@ -92,17 +92,17 @@ function getLogin() {
 function changeTerminal(x) {
     if(x == 0)
     {
-        document.getElementById("roboCode").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
+        document.getElementById("roboCodeCopy").innerHTML = "$ cd #enter your desired directory\n" +
             "$ git clone http://github.com/\n\tHarkerRobo/RoboCode2018\n" +
             "$ cd RoboCode2018\n" +
             "$ git fetch origin\n" +
             "$ git checkout master";
-        document.getElementById("android").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
+        document.getElementById("scoutingiOSCopy").innerHTML = "$ cd #enter your desired directory\n" +
             "$ git clone http://github.com/\n\tHarkerRobo/scouting-android\n" +
             "$ cd scouting-android\n" +
             "$ git fetch origin\n" +
             "$ git checkout master";
-        document.getElementById("iOS").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
+        document.getElementById("scoutingAndroidCopy").innerHTML = "$ cd #enter your desired directory\n" +
             "$ git clone http://github.com/\n\tHarkerRobo/scouting-ios\n" +
             "$ cd scouting-ios\n" +
             "$ git fetch origin\n" +
@@ -110,17 +110,17 @@ function changeTerminal(x) {
     }
     else if (x == 1)
     {
-        document.getElementById("roboCode").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
+        document.getElementById("roboCodeCopy").innerHTML = "$ cd #enter your desired directory\n" +
             "$ git clone http://github.com/HarkerRobo/RoboCode2018\n" +
             "$ cd RoboCode2018\n" +
             "$ git fetch origin\n" +
             "$ git checkout master";
-        document.getElementById("android").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
+        document.getElementById("scoutingiOSCopy").innerHTML = "$ cd #enter your desired directory\n" +
             "$ git clone http://github.com/HarkerRobo/scouting-android\n" +
             "$ cd scouting-android\n" +
             "$ git fetch origin\n" +
             "$ git checkout master";
-        document.getElementById("iOS").innerHTML = getLogin() + "\n\n" + "$ cd #enter your desired directory\n" +
+        document.getElementById("scoutingAndroidCopy").innerHTML = "$ cd #enter your desired directory\n" +
             "$ git clone http://github.com/HarkerRobo/scouting-ios\n" +
             "$ cd scouting-ios\n" +
             "$ git fetch origin\n" +
