@@ -524,6 +524,15 @@ dl dd {
 * html .clearfix {height: 1%;}
 .clearfix {display: block;}
 
+
+x::selection {
+    background-color: #0000ff;
+}
+
+x::-moz-selection {
+    background-color: #0000ff;
+}
+
 /* #Media Queries
 ================================================== */
 
@@ -617,6 +626,11 @@ margin-left: 0;
         font-size: 13px;
         display: inline;
     }
+
+    .copyButton {
+      display: none;
+    }
+
     #main-content,
     aside#sidebar {
         float: none;
@@ -644,14 +658,6 @@ margin-left: 0;
     }
 }
 
-x::selection {
-    background-color: #0000ff;
-}
-
-x::-moz-selection {
-    background-color: #0000ff;
-}
-
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 @media only screen and (min-width: 480px) and (max-width: 767px)
 {
@@ -664,8 +670,5 @@ x::-moz-selection {
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) {
-  .copyButton{
-    display:none;
-  }
   }
 }
