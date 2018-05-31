@@ -11,7 +11,7 @@ function main() {
         }, function (err) {
             document.getElementById("favicon").href = "../images/favicon.png";
         });
-}
+    }
 }
 
 function changeButton(x)
@@ -134,13 +134,13 @@ function copyToClipboard(x)
     {
         str = document.getElementById("roboCodeCopy").textContent;
     }
-    if (x == 1)
-    {
-        str = document.getElementById("scoutingiOSCopy").textContent;
-    }
-    if (x == 2)
+    else if (x == 1)
     {
         str = document.getElementById("scoutingAndroidCopy").textContent;
+    }
+    else if (x == 2)
+    {
+        str = document.getElementById("scoutingiOSCopy").textContent;
     }
     while (str.indexOf("$ ") >= 0 )
     {

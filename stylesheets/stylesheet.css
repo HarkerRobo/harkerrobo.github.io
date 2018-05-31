@@ -1,9 +1,10 @@
 /* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
+v2.0 | 20110126
+License: none (public domain)
 */
 @import url('https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC|Sunflower:300|Tajawal');
 @import url('../fonts/neuropol.ttf');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, welcome, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,25 +25,28 @@ time, mark, audio, video {
     font: inherit;
     vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
-body {
-    line-height: 1;
-}
+
+
 ol, ul {
     list-style: none;
 }
+
 blockquote, q {
     quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
     content: '';
     content: none;
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -60,7 +64,6 @@ body {
     font-family: 'Tajawal', sans-serif;
     font-weight: 400;
     color: #666;
-
 }
 
 #gitButtonText
@@ -79,6 +82,7 @@ body {
     -o-animation: 1s blink step-end infinite;
     animation: 1s blink step-end infinite;
 }
+
 .blinking-cursor::selection {
     background-color:transparent;
 }
@@ -139,6 +143,7 @@ body {
     font-family: neuropol;
     src: url('../fonts/neuropol.ttf');
 }
+
 @font-face {
     font-family: 'Raleway';
     src: url('../fonts/Raleway-Bold.ttf');
@@ -150,15 +155,16 @@ body {
     src: url('../fonts/Raleway-Light.ttf');
     font-weight: 300;
 }
+
 @font-face {
     font-family: 'Raleway';
     src: url('../fonts/Raleway-Medium.ttf');
     font-weight: 500;
 }
+
 a {
     color: #2879d0;
 }
-
 
 header {
     padding-top: 20px;
@@ -170,6 +176,9 @@ header {
     top:0;
     position:fixed;
     width:100%;
+    -webkit-box-shadow: 2px 6px 44px -10px rgba(0,0,0,0.85);
+    -moz-box-shadow: 2px 6px 44px -10px rgba(0,0,0,0.85);
+    box-shadow: 2px 6px 44px -10px rgba(0,0,0,0.85);
 }
 
 header h1::selection {
@@ -178,7 +187,6 @@ header h1::selection {
 header h1::-moz-selection {
     background-color: transparent;
 }
-
 
 header h1 {
     letter-spacing: -1px;
@@ -192,9 +200,6 @@ header h1 {
     font-family: 'Raleway', sans-serif;
     font-weight:700;
 }
-#harker{
-    font-weight: lighter;
-}
 
 header h2 {
     font-size: 22px;
@@ -205,9 +210,11 @@ header h2 {
     font-weight:500;
     font-family: 'Raleway', sans-serif;
 }
+
 header h2::selection {
     background-color: transparent;
 }
+
 header h2::-moz-selection {
     background-color: transparent;
 }
@@ -259,8 +266,6 @@ aside#sidebar p.repo-owner a {
     margin-bottom: 40px;
 }
 
-
-
 a.button {
     box-sizing:border-box;
     width:218px;
@@ -279,9 +284,9 @@ a.button {
 }
 
 /*a.button:hover{
-    color:rgb(31, 49, 85);
+color:rgb(31, 49, 85);
 
-    background-color: white;
+background-color: white;
 }*/
 
 a.button small {
@@ -293,20 +298,18 @@ a.button small {
 
 a.button small::selection {
     background-color:transparent;
-
 }
+
 a.button small::-moz-selection {
     background-color:transparent;
-
 }
 
 a.button img::selection {
     background-color:transparent;
-
 }
+
 a.button img::-moz-selection {
     background-color:transparent;
-
 }
 
 header a.button {
@@ -314,6 +317,7 @@ header a.button {
     right: 0;
     top: 0;
 }
+
 aside a.button {
     width: 138px;
     padding-left: 64px;
@@ -335,13 +339,6 @@ code {
     padding: 0 3px;
 }
 
-
-#back-blur{
-    filter: blur(2px);
-    z-index:1;
-    width:100%;
-}
-
 a:hover{
     color: rgb(31,49,85);
 }
@@ -356,6 +353,7 @@ pre {
     overflow: auto;
     border-radius:10px;
 }
+
 pre code {
     font-size:14px;
     /*color: #2879d0;*/
@@ -363,9 +361,11 @@ pre code {
     border: none;
     padding: 0;
 }
+
 code::selection{
     background-color:rgba(0,0,255,1);
 }
+
 code::-moz-selection{
     background-color:rgba(0,0,255,1);
 }
@@ -373,42 +373,45 @@ code::-moz-selection{
 ul, ol, dl {
     margin-bottom: 20px;
 }
+
 #main-content button{
-  box-sizing: border-box;
-  height: 32px;
-  width: 179px;
-  color: rgb(255,255,255);
-  background-color: rgb(31,49,85);
-  border-radius: 5px;
-  border-width:0;
-  font-size: 14px;
-  font-family: 'Raleway', sans-serif;
-  padding:0;
+    box-sizing: border-box;
+    height: 32px;
+    width: 179px;
+    color: rgb(255,255,255);
+    background-color: rgb(31,49,85);
+    border-radius: 5px;
+    border-width:0;
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+    padding:0;
 }
 
 #main-content button:hover{
-  border-width:1px;
-  color: rgb(31,49,85);
-  background-color: rgba(0,0,0,0);
-  border-color: rgb(31,49,85);
+    border-width:1px;
+    color: rgb(31,49,85);
+    background-color: rgba(0,0,0,0);
+    border-color: rgb(31,49,85);
 }
 
 #main-content button:active{
-  background-color: rgba(225,225,225,0.5);
+    background-color: rgba(225,225,225,0.5);
 }
 
 #main-content button::selection {
-  background-color: transparent;
+    background-color: transparent;
 }
+
 #main-content button::-moz-selection {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 .buttonText::selection {
-  background-color: transparent;
+    background-color: transparent;
 }
+
 .buttonText::-moz-selection {
-  background-color: transparent;
+    background-color: transparent;
 }
 /* COMMON STYLES */
 
@@ -504,22 +507,10 @@ dl dd {
     font-weight: 100;
 }
 
-footer {
-    background: transparent url('../images/hr.png') 0 0 no-repeat;
-    margin-top: 40px;
-    padding-top: 20px;
-    padding-bottom: 30px;
-    font-size: 13px;
-    color: #aaa;
+#everything{
+    width:100%;
+    min-height: 100%;
 }
-
-footer a {
-    color: #666;
-}
-footer a:hover {
-    color: #444;
-}
-
 /* MISC */
 .clearfix:after {
     clear: both;
@@ -551,31 +542,31 @@ footer a:hover {
 
 /* Tablet Portrait size to standard 960 (devices and browsers) */
 /*@media only screen and (min-width: 768px) and (max-width: 959px) {
-    .inner {
-        width: 740px;
-    }
-    header h1, header h2 {
-        width: 340px;
-    }
-    header h1 {
-        font-size: 46px;
-    }
-    header h2 {
-        font-size: 23px;
-    }
-    #main-content {
-        width: 100%;
-    }
-    #main-content h1:before,
-    #main-content h2:before,
-    #main-content h3:before,
-    #main-content h4:before,
-    #main-content h5:before,
-    #main-content h6:before {
-        content: none;
-        padding-right: 0;
-        margin-left: 0;
-    }
+.inner {
+width: 740px;
+}
+header h1, header h2 {
+width: 340px;
+}
+header h1 {
+font-size: 46px;
+}
+header h2 {
+font-size: 23px;
+}
+#main-content {
+width: 100%;
+}
+#main-content h1:before,
+#main-content h2:before,
+#main-content h3:before,
+#main-content h4:before,
+#main-content h5:before,
+#main-content h6:before {
+content: none;
+padding-right: 0;
+margin-left: 0;
+}
 
 }*/
 
@@ -619,8 +610,8 @@ footer a:hover {
         border-color:white;
     }
     /*header a.button:hover{
-        background-color:white;
-        color:rgb(31, 49, 85);
+    background-color:white;
+    color:rgb(31, 49, 85);
     }*/
     header a.button small {
         font-size: 13px;
@@ -654,11 +645,11 @@ footer a:hover {
 }
 
 x::selection {
-  background-color: #0000ff;
+    background-color: #0000ff;
 }
 
 x::-moz-selection {
-  background-color: #0000ff;
+    background-color: #0000ff;
 }
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
