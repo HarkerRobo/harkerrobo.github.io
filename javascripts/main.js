@@ -72,6 +72,27 @@ function shouldResize()
     }
 
 }
+/*
+function changeCopy(x) {
+
+  buttons = document.getElementsByClassName("copyButton");
+
+  if(x = 0)
+  {
+    for (var i = 0; i < buttons.length; i++)
+    {
+      buttons[i].style.display = "none";
+    }
+  }
+  else if(x = 1)
+  {
+    for (var i = 0; i < buttons.length; i++)
+    {
+      buttons[i].style.display = "inline";
+    }
+  }
+}
+*/
 function getLogin() {
     var date = new Date();
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -97,7 +118,7 @@ function changeTerminal(x) {
             "$ cd RoboCode2018\n" +
             "$ git fetch origin\n" +
             "$ git checkout master";
-        document.getElementById("scoutingAnroidCopy").innerHTML = "$ cd #enter your desired directory\n" +
+        document.getElementById("scoutingAndroidCopy").innerHTML = "$ cd #enter your desired directory\n" +
             "$ git clone http://github.com/\n\tHarkerRobo/scouting-android\n" +
             "$ cd scouting-android\n" +
             "$ git fetch origin\n" +
