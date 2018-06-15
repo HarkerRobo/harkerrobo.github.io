@@ -1,23 +1,40 @@
 $(document).ready(function(){
     $("ul").hide();
+    $("#summer").hide();
+    $("section:not(#main-content)").hide();
+
     var num = -1;
     var downArrow = "▾";
     var upArrow = "▴";
     var toggleTime = 500;
     
-    function swapArrows (num)
+    function swapArrows (element)
     {
-        var day = "#day" + num; 
-        var initArrow = $(day).html().substring($(day).html().length -1);
+        var num = -1;
+
+        if (element.substring(0, 4) === "#day")
+        {
+            num = element.substring(4, 5);
+        }
+        
+        var initArrow = $(element).html().substring($(element).html().length -1);
         if (initArrow === downArrow)
         {
-            $(day).html(String($(day).html()).substring(0,$(day).html().length-1) + upArrow);
-            hideLineBreak(num);
+            $(element).html(String($(element).html()).substring(0,$(element).html().length-1) + upArrow);
+            if (num != -1)
+            {
+                hideLineBreak(num); 
+            }
+            
         }
         else
         {
-            $(day).html(String($(day).html()).substring(0,$(day).html().length-1) + downArrow);
-            showLineBreak(num);
+            $(element).html(String($(element).html()).substring(0,$(element).html().length-1) + downArrow);
+            if (num != -1)
+            {
+                showLineBreak(num);
+            }
+            
         }
     }
 
@@ -55,31 +72,44 @@ $(document).ready(function(){
         }, 0);
     }
 
+    $("#summerHead").click(function(){
+        $("#summer").toggle(toggleTime);
+        swapArrows("#summerHead");
+    });
 
+    $("#robo2018Head").click(function(){
+        $("#robo2018").toggle(toggleTime);
+        swapArrows("#robo2018Head");
+    });
+
+    $("#scouting2018Head").click(function(){
+        $("#scoutingApp2018").toggle(toggleTime);
+        swapArrows("#scouting2018Head");
+    });
     $("#day1").click(function(){
         num = 1;
         $("#day" + String(num) + "List").toggle(toggleTime);
-        swapArrows(num);
+        swapArrows("#day" + num);
         
     });
     $("#day2").click(function(){
         num = 2;
         $("#day" + String(num) + "List").toggle(toggleTime);
-        swapArrows(num);
+        swapArrows("#day" + num);
     });
     $("#day3").click(function(){
         num = 3;
         $("#day" + String(num) + "List").toggle(toggleTime);
-        swapArrows(num);
+        swapArrows("#day" + num);
     });
     $("#day4").click(function(){
         num = 4;
         $("#day" + String(num) + "List").toggle(toggleTime);
-        swapArrows(num);
+        swapArrows("#day" + num);
     });
     $("#day5").click(function(){
         num = 5;
         $("#day" + String(num) + "List").toggle(toggleTime);
-        swapArrows(num);
+        swapArrows("#day" + num);
     });
 });

@@ -19,6 +19,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src = "javascripts/projects.js">
     </script>
+    <script src = "javascripts/index.js">
+    </script>
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -47,70 +49,132 @@
     <div class="inner clearfix">
         <section id="main-content">
             <h1> Projects </h1>
-            <h3> Summer Training </h3>
-            <section id = "summer">
-            <p class = "summer"> We set out to master the fundamentals of FRC Programming over seven weeks. Track our progress and work along with us.</p>
-                <h2 id = "day1"> Day 1 - 6/8/18 - Getting Started ▾</h2>
-                <br id = "br1">
-                <ul id = "day1List">
-                    <li> Obtained robot and other equipment from the lab </li>
-                    <li> Cleared workspace for optimal robot use </li>
-                </ul>
-                <h2 id = "day2"> Day 2 - 6/11/18 - Software Installation, Joysticks, and Talons ▾</h2>
-                <br id = "br2">
-                <ul id = "day2List">
-                    <li> Installed Java, Eclipse, Phoenix, and FRC Driver Station to main computer </li>
-                    <li> Tested and debuggd basic programs with roboRIO </li>
-                    <li class = "leftBullet"> Removed JDK 9 in favor of the supported JDK 8. </li>
-                    <li>  Created Drivetrain subsystem and ArcadeDriveVelocity to move</li>
-                    <li class = "leftBullet"> Cannot send constant to the TalonSRX: must use joysticks due to update frequency</li>
-                    <li> Followed Talon SRX Manual up to part 7</li>
-                </ul>
+            <p class = "summer"> Click on any of the headers below to learn more about 1072's Software projects. </p> 
+            <h3 id = "summerHead"> Summer Robot Code (6/8/18 - ) ▾</h3>
+                <section id = "summer">
 
-                <h2 id = "day3"> Day 3 - 6/12/18 - SmartDashboard, Configuring Velocity PID ▾</h2>
-                <br id = "br3">
-                <ul id = "day3List">
-                    <li> Installed SmartDashboard and learned how to print and graph data from code </li>
-                    <img src = "images/summerproject/SmartDash.PNG" height="500" class="centerImg">
-                    <li> Configured basic settings for velocity PID using the Talon SRX Manual </li>
-                    <li class = "leftBullet"> Tested on an elevated platform to start </li>
-                    <li class = "leftBullet"> Aligned sensor phase with Talons, configured nominal output and peak output in both directions</li>
-                    <li> Created GitHub to store code </li>
-                </ul>
+                <p class = "summer"> We set out to master the fundamentals of FRC Programming over seven weeks. Track our progress and work along with us.</p>
+                <h4> Code </h4>
+                 <p class = "summer">To view our summer robot code, type the following into the command line:</p>
 
-                <h2 id = "day4"> Day 4 - 6/13/18 - Mastering Velocity and Position PID ▾</h2>
-                <br id = "br4">
-                <ul id = "day4List">
-                    <li> Continued Velocity PID, tuning F, P, and D constants to minimize error</li>
-                    <li> Later removed robot from blocks and retuned constants </li>
-                    <li> Began Position PID, carefully tuning P, I, and D constants using the joystick as a position input </li>
-                    <li> Researched optimal carpet to most accurately simulate field conditions</li>
-                    <li> Successfully transported the switch from the lab to our workspace</li>
-                    <img src = "images/summerproject/switch.jpeg" alt="" height="300" width="300"> <img src = "images/summerproject/ananddismantle.jpeg" height="300" width="300" align="middle"> <img src = "images/summerproject/day3working.jpeg" height="300" width="300">
-                </ul>
+                <pre><code><code id = "summerRoboCode"></code><span class="blinking-cursor">_</span></code></pre>
+                <script>
+                    document.getElementById("summerRoboCode").innerHTML = getLogin() + "\n\n" + "<x id = \"summerRoboCodeCopy\">$ cd #enter your desired directory\n" +
+                        "$ git clone https://github.com/FinnitoProductions/SummerRoboCode2018\n" +
+                        "$ cd SummerRoboCode2018\n" +
+                        "$ git fetch origin\n" +
+                        "$ git checkout master</x>";
+                    shouldResize();
+                </script>
+                <div style = "text-align:right; margin:0;"><button class = "copyButton" onclick="copyToClipboard(3)"> <span class = "buttonText">Copy to Clipboard</span> </button></div>
+                <h4> Timeline </h4>
+                    <h2 id = "day1"> Day 1 - 6/8/18 - Getting Started ▾</h2>
+                    <br id = "br1">
+                    <ul id = "day1List">
+                        <li> Obtained robot and other equipment from the lab </li>
+                        <li> Cleared workspace for optimal robot use </li>
+                    </ul>
+                    <h2 id = "day2"> Day 2 - 6/11/18 - Software Installation, Joysticks, and Talons ▾</h2>
+                    <br id = "br2">
+                    <ul id = "day2List">
+                        <li> Installed Java, Eclipse, Phoenix, and FRC Driver Station to main computer </li>
+                        <li> Tested and debuggd basic programs with roboRIO </li>
+                        <li class = "leftBullet"> Removed JDK 9 in favor of the supported JDK 8. </li>
+                        <li>  Created Drivetrain subsystem and ArcadeDriveVelocity to move</li>
+                        <li class = "leftBullet"> Cannot send constant to the TalonSRX: must use joysticks due to update frequency</li>
+                        <li> Followed Talon SRX Manual up to part 7</li>
+                    </ul>
 
-                <h2 id = "day5"> Day 5 - 6/14/18 - Elevator PID and Intake ▾</h2>
-                <br id = "br5">
-                <ul id = "day5List">
-                    <li> Added current limit to drive train, completed position PID </li>
-                    <li> Improved code design with easy-to-read comments and encapsulation </li>
-                    <li> Completed pneumatics control </li>
-                    <li class = "leftBullet"> Tested compressor with pressure switch </li>
-                    <img src = "images/summerproject/testingcomp.jpeg" height="400" width = "300" style ="margin-left:30px"> 
-                    <li class = "leftBullet"> Actuated solenoids for compression and intake raising using joystick D-Pad </li>
-                    <img src = "images/summerproject/actuatesol.jpg" alt="" height="400" width = "300" style ="margin-left:30px"> <img src = "images/summerproject/intakemotion.png" alt="" height="400" width = "300"> 
-                    <li> Implemented working Elevator subsystem </li>
-                    <li class = "leftBullet"> Created commands to move the elevator given a set position or velocity</li>
-                    <li class = "leftBullet"> Created 5-amp current limit to minimize damage </li>
-                    <li class = "leftBullet"> Configured sensor phase to align with motors</li>
-                    <li class = "leftBullet"> Began elevator position PID </li>
-                    <li class = "leftBullet" style="margin-left:30px"> Tuned ArbitraryFeedForward constant to counteract effects of gravity </li>
-                    <li class = "leftBullet" style="margin-left:30px"> Began tuning P constant until damaging chain with poorly selected range </li>
-                    <li> Continued Intake subsystem to add cube intaking functionality</li>
-                    <li class = "leftBullet"> Successfully implemented left half of intake</li>
-                </ul>
+                    <h2 id = "day3"> Day 3 - 6/12/18 - SmartDashboard, Configuring Velocity PID ▾</h2>
+                    <br id = "br3">
+                    <ul id = "day3List">
+                        <li> Installed SmartDashboard and learned how to print and graph data from code </li>
+                        <img src = "images/summerproject/SmartDash.PNG" height="500" class="centerImg">
+                        <li> Configured basic settings for velocity PID using the Talon SRX Manual </li>
+                        <li class = "leftBullet"> Tested on an elevated platform to start </li>
+                        <li class = "leftBullet"> Aligned sensor phase with Talons, configured nominal output and peak output in both directions</li>
+                        <li> Created GitHub to store code </li>
+                    </ul>
+
+                    <h2 id = "day4"> Day 4 - 6/13/18 - Mastering Velocity and Position PID ▾</h2>
+                    <br id = "br4">
+                    <ul id = "day4List">
+                        <li> Continued Velocity PID, tuning F, P, and D constants to minimize error</li>
+                        <li> Later removed robot from blocks and retuned constants </li>
+                        <li> Began Position PID, carefully tuning P, I, and D constants using the joystick as a position input </li>
+                        <li> Researched optimal carpet to most accurately simulate field conditions</li>
+                        <li> Successfully transported the switch from the lab to our workspace</li>
+                        <img src = "images/summerproject/switch.jpeg" alt="" height="300" width="300"> <img src = "images/summerproject/ananddismantle.jpeg" height="300" width="300" align="middle"> <img src = "images/summerproject/day3working.jpeg" height="300" width="300">
+                    </ul>
+
+                    <h2 id = "day5"> Day 5 - 6/14/18 - Elevator PID and Intake ▾</h2>
+                    <br id = "br5">
+                    <ul id = "day5List">
+                        <li> Added current limit to drive train, completed position PID </li>
+                        <li> Improved code design with easy-to-read comments and encapsulation </li>
+                        <li> Completed pneumatics control </li>
+                        <li class = "leftBullet"> Tested compressor with pressure switch </li>
+                        <img src = "images/summerproject/testingcomp.jpeg" height="400" width = "300" style ="margin-left:30px"> 
+                        <li class = "leftBullet"> Actuated solenoids for compression and intake raising using joystick D-Pad </li>
+                        <img src = "images/summerproject/actuatesol.jpg" alt="" height="400" width = "300" style ="margin-left:30px"> <img src = "images/summerproject/intakemotion.png" alt="" height="400" width = "300"> 
+                        <li> Implemented working Elevator subsystem </li>
+                        <li class = "leftBullet"> Created commands to move the elevator given a set position or velocity</li>
+                        <li class = "leftBullet"> Created 5-amp current limit to minimize damage </li>
+                        <li class = "leftBullet"> Configured sensor phase to align with motors</li>
+                        <li class = "leftBullet"> Began elevator position PID </li>
+                        <li class = "leftBullet" style="margin-left:30px"> Tuned ArbitraryFeedForward constant to counteract effects of gravity </li>
+                        <li class = "leftBullet" style="margin-left:30px"> Began tuning P constant until damaging chain with poorly selected range </li>
+                        <li> Continued Intake subsystem to add cube intaking functionality</li>
+                        <li class = "leftBullet"> Successfully implemented left half of intake</li>
+                    </ul>
+                </section>
+            <h3 id = "robo2018Head"> 2018 Robot Code (1/6/18 - 4/21/18) ▾</h3>
+                <section id = "robo2018">
+                    <p>To view our robot code, type the following into the command line:</p>
+
+                    <pre><code><code id = "roboCode"></code><span class="blinking-cursor">_</span></code></pre>
+                    <script>
+                        document.getElementById("roboCode").innerHTML = getLogin() + "\n\n" + "<x id = \"roboCodeCopy\">$ cd #enter your desired directory\n" +
+                            "$ git clone http://github.com/HarkerRobo/RoboCode2018\n" +
+                            "$ cd RoboCode2018\n" +
+                            "$ git fetch origin\n" +
+                            "$ git checkout master</x>";
+                        shouldResize();
+                    </script>
+                    <div style = "text-align:right; margin:0;"><button class = "copyButton" onclick="copyToClipboard(0)"> <span class = "buttonText">Copy to Clipboard</span> </button></div>
+                </section>
+            <h3 id = "scouting2018Head"> 2018 Scouting App (1/6/18 - 4/19/18) ▾</h3>
+            <section id = "scoutingApp2018">
+                <p>To view our scouting app, type the following into the command line:</p>
+                <p>For Android:</p>
+                <pre><code><code id = "android"></code><span class="blinking-cursor">_</span></code></pre>
+                <script>
+                    document.getElementById("android").innerHTML = getLogin() + "\n\n" + "<x id =\"scoutingAndroidCopy\">$ cd #enter your desired directory\n" +
+                        "$ git clone http://github.com/HarkerRobo/scouting-android\n" +
+                        "$ cd scouting-android\n" +
+                        "$ git fetch origin\n" +
+                        "$ git checkout master</x>";
+                    shouldResize();
+                </script>
+                <div style = "text-align:right;"><button class = "copyButton" onclick="copyToClipboard(1)"> <span class = "buttonText">Copy to Clipboard</span> </button></div>
+                <p style = "margin-top:24px;">For iOS:</p>
+                <pre><code><code id ="iOS"></code><span class="blinking-cursor">_</span></code></pre>
+                <script>
+                    document.getElementById("iOS").innerHTML = getLogin() + "\n\n" + "<x id =\"scoutingiOSCopy\">$ cd #enter your desired directory\n" +
+                        "$ git clone http://github.com/HarkerRobo/scouting-ios\n" +
+                        "$ cd scouting-ios\n" +
+                        "$ git fetch origin\n" +
+                        "$ git checkout master</x>";
+                    shouldResize();
+                </script>
+                <div class = "buttonHolder" style = "text-align:right;"><button class = "copyButton" onclick="copyToClipboard(2)"> <span class = "buttonText">Copy to Clipboard</span> </button> </div>
+                <br>
+
             </section>
-            </section>
+            <script>
+                if(window.innerWidth<615)
+                    changeTerminal(0)
+            </script>
     </div>
     <!--
     <aside id="sidebar">

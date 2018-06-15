@@ -457,12 +457,23 @@ form {
 #main-content h2 {
     font-family: 'Raleway', sans-serif;
     font-size: 22px;
+    font-weight: 400;
 }
 
 #main-content h3 {
     font-family: 'Raleway', sans-serif;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 700;
+    margin-top: 24px;
+    margin-bottom: 8px;
+    color: #474747;
+}
+
+/* higher in tree than h2, lower than h3 */
+#main-content h4 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
     margin-top: 24px;
     margin-bottom: 8px;
     color: #474747;
@@ -471,7 +482,9 @@ form {
 
 
 
-#summer
+
+
+#summer li, p
 {
     font-size: 18px;
 
@@ -672,7 +685,13 @@ margin-left: 0;
     #main-content h3:before,
     #main-content h4:before,
     #main-content h5:before,
-    #main-content h6:before {
+    #main-content h6:before,
+    #project-content h1:before,
+    #project-content h2:before,
+    #project-content h3:before,
+    #project-content h4:before,
+    #project-content h5:before,
+    #project-content h6:before {
         content: none;
         padding-right: 0;
         margin-left: 0;

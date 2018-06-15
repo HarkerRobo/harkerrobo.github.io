@@ -163,6 +163,10 @@ function copyToClipboard(x)
     {
         str = document.getElementById("scoutingiOSCopy").textContent;
     }
+    else if (x == 3)
+    {
+        str = document.getElementById("summerRoboCodeCopy").textContent;
+    }
     while (str.indexOf("$ ") >= 0 )
     {
         str = str.replace("$ ", "");
