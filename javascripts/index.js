@@ -150,7 +150,7 @@ function changeTerminal(x) {
 }
 function copyToClipboard(x)
 {
-    var str = "";
+    var str = new String("");
     if (x == 0)
     {
         str = document.getElementById("roboCodeCopy").textContent;
