@@ -112,4 +112,9 @@ $(document).ready(function(){
         $("#day" + String(num) + "List").toggle(toggleTime);
         swapArrows("#day" + num);
     });
+    $("#day6").click(function(){
+        num = 6;
+        $("#day" + String(num) + "List").toggle(toggleTime);
+        swapArrows("#day" + num);
+    });
 });

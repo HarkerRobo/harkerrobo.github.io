@@ -479,7 +479,9 @@ form {
     color: #474747;
 }
 
-
+.roundedCorners {
+    border-radius: 20px;
+}
 
 
 
