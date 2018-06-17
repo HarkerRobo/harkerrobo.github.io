@@ -34,8 +34,20 @@
     <div class="inner">
         <h1>Harker Robotics</h1>
         <h2>Team 1072&#39;s Software Database</h2>
-        <div style = "display: inline-block;"> <a href="https://github.com/HarkerRobo" target="_blank" class="button" onload = "shouldResize()" onmouseenter="changeButton(0)" onmouseleave = "changeButton(1)"><small id = "gitButtonText">Follow us on </small> <img src = "images/github-logo-light.png" id = "autosizeImg"></a> </div>
+        <div style = "display: inline-block;"> <a href="https://github.com/HarkerRobo" target="_blank" class="button" onload = "shouldResize()" onmouseenter="changeButton(0)" onmouseleave = "changeButton(1)"><small id = "gitButtonText">Follow us on </small> <img src = "images/github-logo-light.png" id = "autosizeImg"></a> 
+
+        </div>
+<div id="nav-bar">
+            <ul id = "navBar">
+                <li> <a href="index.html">Home</a> </li>
+                <li> <a class = "openPage" href ="projects.html">Projects</a> </li>
+                <li> <a href ="authors.html">Authors</a> </li> 
+                <li> <a href = "contact.html">Contact Us</a></li>
+            </ul>
+            </div>
+
     </div>
+
 </header>
 <script>
     if (window.innerWidth < 975)
@@ -45,10 +57,14 @@
         document.getElementById("gitButtonText").style.marginLeft = "0%";
     }
 </script>
+
 <div id="content-wrapper">
     <div class="inner clearfix">
+
         <section id="main-content">
-            <h1 style="text-align:center"> Projects </h1>
+            
+            <h1 style="text-align:center; margin-top: 15px"> Projects </h1>
+            
             <p class = "summer" style= "text-align:center"> Click on any of the headings below to learn more about 1072's Software projects. </p> 
             <h3 id = "summerHead" style= "text-align:center"> Summer Robot Code (6/8/18 - ) ▾</h3>
                 <section id = "summer">
@@ -128,6 +144,7 @@
                         <li class = "leftBullet"> Successfully implemented left half of intake</li>
                     </ul>
                     <h2 id = "day6"> Day 6 - 6/15/18 - Wrapping Up Teleop ▾</h2>
+                    <br id = "br6">
                     <ul id = "day6List">
                         <li> Repaired elevator chain after damaging a link during yesterday's tuning </li>
                         <img src = "images/summerproject/chainreparation.jpg" height="400" class="roundedCorners"> 
@@ -138,6 +155,14 @@
                         <li class = "leftBullet"> Further tuning and research is necessary for the arbitrary feed forward constant intended to counteract gravity</li>
                         <li> Incorporated everything into a single controller, animating the robot with a fully functional drive train, elevator, and intake </li>
                         <img src = "images/summerproject/outtakecube.png" height=240 class="roundedCorners"> <img src = "images/summerproject/intakecube.png" height=240 class="roundedCorners"> <img src = "images/summerproject/elevraise.png" height=240 class = "roundedCorners">
+                    </ul>
+                    <h2 id = "day7"> Day 7 - 6/16/18 - Moving to Command-Based Architecture ▾</h2>
+                    <br id = "br7">
+                    <ul id = "day7List">
+                        <li> Created a wrapper class to encapsulate the gamepad </li>
+                        <li> Discussed pros and cons of various programming systems, such as command-based and state-based</li>
+                        <li> Began to port existing features over to a command-based system with a scheduler </li>
+                        <li> Created preset elevator positions using gamepad buttons</li>
                     </ul>
                 </section>
             <h3 id = "robo2018Head" style= "text-align:center"> 2018 Robot Code (1/6/18 - 4/21/18) ▾</h3>

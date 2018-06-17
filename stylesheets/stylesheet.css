@@ -479,12 +479,56 @@ form {
     color: #474747;
 }
 
+#main-content li {
+    font-size: 18px;
+}
+
 .roundedCorners {
     border-radius: 20px;
 }
 
+/* Navigation Bar */
+#nav-bar 
+{
+    display:table ;
+    margin: 0 auto;
+    margin-top: -10px;
+    margin-bottom: -20px;
+}
+#navBar 
+{
+    text-align: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:auto;
+}
 
+#navBar li 
+{
+    float: left;
+    display: inline-block;
+    /*border:2px solid rgba(256, 256, 256, 0.5);*/
+}
 
+#navBar li:hover 
+{
+    background-color: rgb(18, 41, 86);
+}
+#navBar li a 
+{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.openPage 
+{
+    background-color: rgb(50, 79, 137);
+}
 
 #summer li, p
 {

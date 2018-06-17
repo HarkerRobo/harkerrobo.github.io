@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $("ul").hide();
+    $("ul:not(#navBar)").hide();
     $("#summer").hide();
     $("section:not(#main-content)").hide();
 
@@ -114,6 +114,11 @@ $(document).ready(function(){
     });
     $("#day6").click(function(){
         num = 6;
+        $("#day" + String(num) + "List").toggle(toggleTime);
+        swapArrows("#day" + num);
+    });
+    $("#day7").click(function(){
+        num = 7;
         $("#day" + String(num) + "List").toggle(toggleTime);
         swapArrows("#day" + num);
     });
