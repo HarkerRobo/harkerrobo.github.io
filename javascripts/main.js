@@ -12,6 +12,7 @@ function main() {
             document.getElementById("favicon").href = "../images/favicon.png";
         });
     }
+    setNavBar();
 }
 
 function changeButton(x)
@@ -175,4 +176,42 @@ function copyToClipboard(x)
     var copyText = document.getElementById("roboInput");
     copyText.select();
     document.execCommand("copy");
+}
+
+function setNavBar()
+{
+    var title = document.getElementById("documentName").innerHTML;
+
+    var innerHTML = "<ul id = \"navBar\"> \n";
+    innerHTML += "<li> <a href=\"index.html\">Home</a> </li> \n";
+    innerHTML += "<li> <a href = \"projects.html\">Projects</a> </li> \n";
+    innerHTML += "<li> <a href =\"authors.html\">Authors</a> </li> \n";
+    innerHTML += "<li> <a href = \"contact.html\">Contact Us</a></li> \n";
+    innerHTML += "\n </ul>";
+
+    if (title.indexOf("Authors") >= 0)
+    {
+        var thisPage = "\"authors.html\"";
+        var loc = innerHTML.indexOf(thisPage) + thisPage.length;
+        innerHTML = innerHTML.substring(0, loc) + "class = \"openPage\""  + innerHTML.substring(loc);
+    }
+    else if (title.indexOf("Home") >= 0)
+    {
+        var thisPage = "\"index.html\"";
+        var loc = innerHTML.indexOf(thisPage) + thisPage.length;
+        innerHTML = innerHTML.substring(0, loc) + "class = \"openPage\""  + innerHTML.substring(loc);
+    }
+    else if (title.indexOf("Projects") >= 0)
+    {
+        var thisPage = "\"projects.html\"";
+        var loc = innerHTML.indexOf(thisPage) + thisPage.length;
+        innerHTML = innerHTML.substring(0, loc) + "class = \"openPage\""  + innerHTML.substring(loc);
+    }
+    else if (title.indexOf("Contact") >= 0)
+    {
+        var thisPage = "\"contact.html\"";
+        var loc = innerHTML.indexOf(thisPage) + thisPage.length;
+        innerHTML = innerHTML.substring(0, loc) + "class = \"openPage\""  + innerHTML.substring(loc);
+    }
+    document.getElementById("nav-bar").innerHTML = innerHTML;
 }
