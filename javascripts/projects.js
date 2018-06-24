@@ -14,7 +14,7 @@ $(document).ready(function(){
 
         if (element.substring(0, 4) === "#day")
         {
-            num = element.substring(4, 5);
+            num = element.substring(4);
         }
         
         var initArrow = $(element).html().substring($(element).html().length -1);
@@ -119,6 +119,31 @@ $(document).ready(function(){
     });
     $("#day7").click(function(){
         num = 7;
+        $("#day" + String(num) + "List").toggle(toggleTime);
+        swapArrows("#day" + num);
+    });
+    $("#day8").click(function(){
+        num = 8;
+        $("#day" + String(num) + "List").toggle(toggleTime);
+        swapArrows("#day" + num);
+    });
+    $("#day10").click(function(){
+        num = 10;
+        $("#day" + String(num) + "List").toggle(toggleTime);
+        swapArrows("#day" + num);
+    });
+    $("#day11").click(function(){
+        num = 11;
+        $("#day" + String(num) + "List").toggle(toggleTime);
+        swapArrows("#day" + num);
+    });
+    $("#day12").click(function(){
+        num = 12;
+        $("#day" + String(num) + "List").toggle(toggleTime);
+        swapArrows("#day" + num);
+    });
+    $("#day13").click(function(){
+        num = 13;
         $("#day" + String(num) + "List").toggle(toggleTime);
         swapArrows("#day" + num);
     });

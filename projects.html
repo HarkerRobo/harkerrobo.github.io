@@ -154,10 +154,59 @@
                     <br id = "br7">
                     <ul id = "day7List">
                         <li> Created a wrapper class to encapsulate the gamepad </li>
-                        <li> Discussed pros and cons of various programming systems, such as command-based and state-based</li>
+                        <li> Discussed pros and cons of various programming systems, such as command-based and action-based</li>
                         <li> Began to port existing features over to a command-based system with a scheduler </li>
                         <li> Created preset elevator positions using gamepad buttons</li>
                     </ul>
+                    <h2 id = "day8"> Day 8 - 6/18/18 - Setting up the Pigeon ▾</h2>
+                    <br id = "br8">
+                    <ul id = "day8List">
+                        <li> Moved robot and other materials to more expansive space, allowing for full carpet use and practice with switch and scale</li>
+                        <img src = "images/summerproject/robotnewworkspace.jpg" height=240 class = "roundedCorners">
+                        <li> Wired Pigeon into CAN bus using Gadgeteer ribbon cable </li>
+                        <li> Read pitch, roll, yaw, as well as other status features directly from the Pigeon</li>
+                        <li> Configured Pigeon as an auxiliary sensor through the Talon, stored in PID slot 2</li>
+                        <li> Began testing, struggled with reading Pigeon value directly through Talon</li>
+                    </ul>
+                    <h2 id = "day10"> Day 9, 10 - 6/19/18, 6/20/18 - Planning and Configuring Autonomous ▾</h2>
+                    <br id = "br10">
+                    <ul id = "day10List">
+                        <li> Installed Jaci's Pathfinder software for efficient motion profile creation </li>
+                        <img src = "images/summerproject/jaci_pathfinder.png" height=240 class = "roundedCorners">
+                        <li> Studied 1072's in-season code, CTRE's examples, as well as numerous other teams' published code to decide on optimal buffering and profile processing system</li>
+                        <li> Created baseline path, stored motion profile constants in FPID slot 3 (where F represents velocity constants and PID represents position constants) </li>
+                        <li> Handled trajectory processing using Pathfinder, created unit convertions from feet, seconds, and radians to encoder ticks, 100 milliseconds, and degrees</li>
+                        <li> Encountered issue where points buffered only half the time</li> 
+                    </ul>
+                    <h2 id = "day11"> Day 11 - 6/21/18 - Beginning Path Creation ▾</h2>
+                    <br id = "br11">
+                    <ul id = "day11List">
+                        <li> Created simple autonomous sequence to intake a cube, raise elevator, and outtake</li>
+                        <iframe class="roundedCorners" width="560" height="315" src="https://www.youtube.com/embed/vonw2i1Ljmk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <li> Created basic center-switch path to test accuracy of curvature</li>
+
+                    </ul>
+                    <h2 id = "day12"> Day 12 - 6/22/18 - Advanced Path Creation and Command-Based Optimization ▾</h2>
+                    <br id = "br12">
+                    <ul id = "day12List">
+                        <li> Developed 16 different autonomous one-cube paths approaching the switch and the scale at various angles </li> 
+                        <li> Determined the root of the issue where autonomous only buffered half the time </li>
+                        <li class = "leftBullet"> Poorly chosen end case and syntax issues with switch-case block caused early termination </li>
+                        <li> Worked on optimizing parallel and sequential CommandGroup system to minimize length of autonomous sequence</li>
+                    </ul>
+                    <h2 id = "day13"> Day 13 - 6/23/18 - Pigeon Debugging and Autonomous Tuning ▾</h2>
+                    <br id = "br13">
+                    <ul id = "day13List">
+                        <li> Modified code to better accomodate pigeon with greater understanding of inner and outer loops gained through autonomous </li>
+                        <li class = "leftBullet"> Unable to test due to CAN hardware issues </li>
+                        <li> Tuned velocity and position drive train constants to improve accuracy on carpet (as opposed to concrete)</li>
+                        <img src = "images/summerproject/rahulcarpet.jpg" height=240 class = "roundedCorners">
+                        <li> Marked out center starting positions and switch using tape</li>
+                        <img src = "images/summerproject/carpettape.jpg" height=240 class = "roundedCorners">
+                        <li> Began to test paths with newly tuned constants</li>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/4jByqWh-eqA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </ul>
+                                            
                 </section>
             <h3 id = "robo2018Head" style= "text-align:center"> 2018 Robot Code (1/6/18 - 4/21/18) ▾</h3>
                 <section id = "robo2018">
